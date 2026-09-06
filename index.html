@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karen De Freitas · Egreso — Fiesta sorpresa</title>
+<meta name="description" content="Karen De Freitas se recibió de abogada y escribana pública. Te invitamos a la fiesta sorpresa: confirmá tu asistencia acá.">
+<meta name="theme-color" content="#0d1424">
+<meta name="robots" content="noindex">
+
+<!-- Vista previa al compartir por WhatsApp / redes.
+     Las URLs apuntan a GitHub Pages de este repositorio. Si la subís
+     a otro lado, cambialas: WhatsApp necesita la dirección completa. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_UY">
+<meta property="og:site_name" content="Egreso de Karen">
+<meta property="og:title" content="Karen se recibió — y no sabe nada">
+<meta property="og:description" content="Fiesta sorpresa por su egreso de abogada y escribana. Entrá y confirmá si venís.">
+<meta property="og:image" content="https://braiantuck.github.io/Karen_Egreso/img/karen-titulo.jpeg">
+<meta property="og:url" content="https://braiantuck.github.io/Karen_Egreso/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230d1424'/%3E%3Cpath d='M50 16 L76 44 L50 72 L24 44 Z' fill='none' stroke='%23d8b26a' stroke-width='7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --noche:#0d1424;
+    --noche-alta:#131d33;
+    --noche-baja:#080d17;
+    --oro:#d8b26a;
+    --oro-vivo:#f0d29a;
+    --oro-hondo:#8f7134;
+    --hueso:#f0ece3;
+    --hueso-tenue:rgba(240,236,227,.86);
+    --borde:rgba(216,178,106,.34);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--noche);
+    color:var(--hueso);
+    font-family:"Jost",system-ui,sans-serif;
+    font-weight:300;
+    font-size:16.5px;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:var(--oro)}
+  a:hover{color:var(--oro-vivo)}
+
+  /* trama déco de fondo */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity:.5;
+    background-image:
+      radial-gradient(circle at 50% 0%, rgba(216,178,106,.13), transparent 58%),
+      repeating-linear-gradient(45deg, rgba(216,178,106,.05) 0 1px, transparent 1px 22px),
+      repeating-linear-gradient(-45deg, rgba(216,178,106,.05) 0 1px, transparent 1px 22px);
+  }
+
+  .marco{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 24px 100px}
+
+  .revela{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.3,1)}
+  .revela.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .revela{opacity:1;transform:none;transition:none}
+    .bajar,.copa,.copa .emblemas{animation:none}
+    .cta:hover,.enviar:hover{transform:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ---------- portada ---------- */
+  .portada{
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:70px 0 50px;
+    position:relative;
+  }
+  /* los dos emblemas: balanza (abogada) y sello (escribana) */
+  .emblemas{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:24px;
+    margin-bottom:26px;
+    color:var(--oro);
+  }
+  .emblemas img{display:block;flex:none;width:auto}
+  .emblema-balanza{height:72px}
+  .emblema-pluma{height:92px}
+  .emblemas .separador{
+    width:7px;
+    height:7px;
+    flex:none;
+    border:1px solid var(--oro);
+    transform:rotate(45deg);
+  }
+  .antetitulo{
+    font-family:"Jost",sans-serif;
+    font-weight:400;
+    font-size:11.5px;
+    letter-spacing:.46em;
+    text-transform:uppercase;
+    color:var(--oro);
+    margin:0;
+    padding-left:.46em;
+  }
+  .portada h1{
+    font-family:"Cinzel",serif;
+    font-weight:700;
+    font-size:clamp(46px,12vw,116px);
+    line-height:.98;
+    letter-spacing:.01em;
+    margin:22px 0 0;
+    background:linear-gradient(175deg,var(--oro-vivo) 8%,var(--oro) 46%,var(--oro-hondo) 96%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .lema{
+    font-family:"Cormorant Garamond",serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:clamp(20px,4vw,32px);
+    color:var(--hueso-tenue);
+    margin:20px auto 0;
+    max-width:22ch;
+    line-height:1.4;
+  }
+  .credenciales{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-top:32px;
+    font-family:"Cinzel",serif;
+    font-size:clamp(12px,2.4vw,15px);
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    color:var(--oro);
+  }
+  .credenciales i{width:5px;height:5px;background:var(--oro);transform:rotate(45deg);display:block}
+
+  .regla{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    margin:44px auto 0;
+    width:min(320px,72%);
+  }
+  .regla::before,.regla::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--oro),transparent)}
+  .regla i{width:8px;height:8px;border:1px solid var(--oro);transform:rotate(45deg);display:block}
+
+  /* llamada a la acción de la portada */
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:40px;
+    min-height:62px;
+    padding:0 42px 0 calc(42px + .28em);
+    background:linear-gradient(160deg,var(--oro-vivo),var(--oro) 60%,var(--oro-hondo));
+    color:var(--noche);
+    text-decoration:none;
+    font-family:"Cinzel",serif;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    transition:filter .2s ease,transform .2s ease;
+  }
+  .cta:hover{filter:brightness(1.12);transform:translateY(-2px);color:var(--noche)}
+  .cta:focus-visible{outline:2px solid var(--oro-vivo);outline-offset:4px}
+
+  .bajar{
+    margin-top:28px;
+    font-size:10.5px;
+    letter-spacing:.36em;
+    text-transform:uppercase;
+    color:var(--hueso-tenue);
+    animation:latir 2.6s ease-in-out infinite;
+  }
+  @keyframes latir{0%,100%{opacity:.45;transform:translateY(0)}50%{opacity:1;transform:translateY(6px)}}
+
+  /* ---------- secciones ---------- */
+  section{margin-top:clamp(70px,12vw,120px)}
+  .rotulo{
+    font-family:"Jost",sans-serif;
+    font-weight:400;
+    font-size:11px;
+    letter-spacing:.4em;
+    text-transform:uppercase;
+    color:var(--oro);
+    margin:0 0 18px;
+    text-align:center;
+    padding-left:.4em;
+  }
+  h2{
+    font-family:"Cinzel",serif;
+    font-weight:600;
+    font-size:clamp(28px,6vw,52px);
+    line-height:1.1;
+    margin:0 0 24px;
+    text-align:center;
+    color:var(--hueso);
+  }
+  /* ---------- carta ---------- */
+  .carta{max-width:62ch;margin:0 auto}
+  .carta .apertura{
+    font-family:"Cormorant Garamond",serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(25px,5.8vw,32px);
+    line-height:1.42;
+    color:var(--oro-vivo);
+    text-align:center;
+    margin:0 0 34px;
+    text-wrap:pretty;
+  }
+  .carta .apertura::after{
+    content:"";
+    display:block;
+    width:64px;
+    height:1px;
+    margin:26px auto 0;
+    background:linear-gradient(90deg,transparent,var(--oro),transparent);
+  }
+  .carta p{
+    margin:0 0 24px;
+    color:var(--hueso-tenue);
+    font-weight:400;
+    font-size:clamp(19px,4.6vw,21px);
+    line-height:1.72;
+    text-wrap:pretty;
+  }
+  .carta p:last-child{margin-bottom:0}
+  .carta strong{color:var(--hueso);font-weight:500}
+
+  /* ---------- retratos ---------- */
+  .galeria{
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    gap:26px;
+    margin-top:44px;
+    align-items:start;
+  }
+  .retrato{
+    position:relative;
+    padding:9px;
+    border:1px solid var(--borde);
+    background:var(--noche-alta);
+  }
+  .retrato::after{
+    content:"";
+    position:absolute;
+    inset:3px;
+    border:1px solid rgba(216,178,106,.18);
+    pointer-events:none;
+  }
+  .retrato img{
+    display:block;
+    width:100%;
+    object-fit:cover;
+    filter:saturate(.82) contrast(1.05) brightness(.96);
+    transition:filter .5s ease,transform .6s ease;
+  }
+  .retrato:hover img{filter:none;transform:scale(1.02)}
+
+  /* una arriba a todo el ancho, dos abajo */
+  .principal{grid-column:1 / -1}
+  .principal img{aspect-ratio:4/3;object-position:center 25%}
+  .secundaria-a{grid-column:1 / span 7}
+  .secundaria-a img{aspect-ratio:4/3}
+  .secundaria-b{grid-column:8 / span 5}
+  .secundaria-b img{aspect-ratio:3/4}
+  .retrato figcaption{
+    font-family:"Cormorant Garamond",serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--hueso-tenue);
+    text-align:center;
+    padding:14px 6px 4px;
+    line-height:1.5;
+  }
+
+  /* ---------- datos ---------- */
+  .tarjetas{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:2px;
+    margin-top:44px;
+    background:var(--borde);
+    border:1px solid var(--borde);
+  }
+  .dato{
+    background:var(--noche-alta);
+    padding:34px 24px;
+    text-align:center;
+  }
+  .dato svg{width:28px;height:28px;color:var(--oro);margin-bottom:16px}
+  .dato dt{
+    font-size:10.5px;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--hueso-tenue);
+    margin-bottom:10px;
+    padding-left:.34em;
+  }
+  .dato dd{
+    margin:0;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(22px,3.4vw,28px);
+    font-weight:600;
+    line-height:1.25;
+    color:var(--oro-vivo);
+  }
+
+  /* ---------- secreto ---------- */
+  .secreto{
+    margin-top:clamp(56px,9vw,90px);
+    border:1px solid var(--borde);
+    background:linear-gradient(180deg,rgba(216,178,106,.09),transparent);
+    padding:clamp(30px,6vw,52px);
+    text-align:center;
+  }
+  .secreto svg{width:42px;height:42px;color:var(--oro);margin-bottom:18px}
+  .secreto h3{
+    font-family:"Cinzel",serif;
+    font-size:clamp(20px,4.4vw,30px);
+    letter-spacing:.08em;
+    margin:0 0 14px;
+    color:var(--oro-vivo);
+  }
+  .secreto p{margin:0 auto;max-width:52ch;color:var(--hueso-tenue);text-wrap:pretty}
+
+  /* ---------- formulario ---------- */
+  .rsvp{
+    margin-top:clamp(70px,12vw,120px);
+    border:1px solid var(--borde);
+    background:var(--noche-baja);
+    padding:clamp(28px,6vw,58px);
+  }
+  .campo{margin-bottom:28px}
+  .campo label,.campo legend{
+    display:block;
+    font-size:10.5px;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--oro);
+    margin-bottom:12px;
+    padding:0 0 0 .34em;
+  }
+  .campo input[type=text],.campo textarea{
+    width:100%;
+    background:rgba(240,236,227,.04);
+    border:1px solid var(--borde);
+    color:var(--hueso);
+    padding:15px 16px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:21px;
+    border-radius:0;
+    transition:border-color .2s ease,background .2s ease;
+  }
+  .campo textarea{resize:vertical;min-height:96px;line-height:1.55}
+  .campo input:focus,.campo textarea:focus{
+    outline:none;
+    border-color:var(--oro);
+    background:rgba(216,178,106,.08);
+  }
+  .campo input::placeholder,.campo textarea::placeholder{color:rgba(240,236,227,.3);font-style:italic}
+
+  fieldset{border:none;margin:0;padding:0}
+  .opciones{display:flex;gap:16px;flex-wrap:wrap}
+  .opcion{flex:1 1 190px;position:relative}
+  .opcion input{position:absolute;opacity:0;width:0;height:0}
+  .opcion span{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    min-height:70px;
+    padding:14px 18px;
+    border:1px solid var(--borde);
+    font-family:"Cinzel",serif;
+    font-size:14px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    line-height:1.4;
+    color:var(--hueso-tenue);
+    cursor:pointer;
+    transition:all .22s ease;
+  }
+  .opcion span:hover{border-color:var(--oro);color:var(--hueso)}
+  .opcion input:checked + span{
+    background:linear-gradient(160deg,var(--oro-vivo),var(--oro));
+    border-color:var(--oro-vivo);
+    color:var(--noche);
+    font-weight:600;
+  }
+  .opcion input:focus-visible + span{outline:2px solid var(--oro-vivo);outline-offset:3px}
+
+  .enviar{
+    width:100%;
+    min-height:70px;
+    background:linear-gradient(160deg,var(--oro-vivo),var(--oro) 60%,var(--oro-hondo));
+    color:var(--noche);
+    border:none;
+    font-family:"Cinzel",serif;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    cursor:pointer;
+    padding-left:.3em;
+    transition:filter .2s ease,transform .2s ease;
+  }
+  .enviar:hover{filter:brightness(1.12);transform:translateY(-2px)}
+  .enviar:disabled{opacity:.55;cursor:progress;transform:none}
+
+  .pie{
+    margin-top:clamp(56px,9vw,90px);
+    text-align:center;
+    font-family:"Cormorant Garamond",serif;
+    font-style:italic;
+    font-size:19px;
+    color:var(--hueso-tenue);
+    line-height:1.9;
+  }
+
+  /* ---------- popup ---------- */
+  .velo{
+    position:fixed;inset:0;z-index:50;
+    display:none;align-items:center;justify-content:center;padding:20px;
+    background:rgba(8,13,23,.86);
+    backdrop-filter:blur(6px);
+  }
+  .velo.abierto{display:flex}
+  .copa{
+    position:relative;
+    max-width:520px;width:100%;
+    background:var(--noche-alta);
+    border:1px solid var(--oro);
+    padding:clamp(34px,6vw,54px) clamp(24px,5vw,46px);
+    text-align:center;
+    animation:sube .55s cubic-bezier(.16,1,.3,1) both;
+  }
+  @keyframes sube{from{opacity:0;transform:translateY(40px) scale(.95)}to{opacity:1;transform:none}}
+  .copa::after{content:"";position:absolute;inset:8px;border:1px solid rgba(216,178,106,.24);pointer-events:none}
+  .copa .emblemas{gap:18px;margin-bottom:20px;animation:gira 1.4s cubic-bezier(.2,.9,.3,1.4) both}
+  .copa .emblema-balanza{height:46px}
+  .copa .emblema-pluma{height:58px}
+  @keyframes gira{from{transform:rotate(-140deg) scale(0);opacity:0}to{transform:none;opacity:1}}
+  .copa h3{
+    font-family:"Cinzel",serif;
+    font-size:clamp(28px,6.4vw,44px);
+    line-height:1.08;
+    margin:0 0 16px;
+    color:var(--oro-vivo);
+  }
+  .copa p{margin:0;color:var(--hueso-tenue);font-size:16px;text-wrap:pretty}
+  .cerrar{
+    margin-top:30px;
+    background:transparent;
+    border:1px solid var(--oro);
+    color:var(--oro);
+    min-height:54px;padding:0 34px;
+    font-family:"Cinzel",serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;
+    cursor:pointer;transition:all .2s ease;
+  }
+  .cerrar:hover{background:var(--oro);color:var(--noche)}
+
+  .lluvia{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
+  .chispa{position:absolute;top:-20px;width:7px;height:7px;transform:rotate(45deg);animation:cae linear forwards}
+  @keyframes cae{to{transform:translateY(106vh) rotate(700deg);opacity:0}}
+
+  @media (max-width:620px){
+    .marco{padding:0 20px 80px}
+    .galeria{gap:20px}
+    .secundaria-a,.secundaria-b{grid-column:1 / -1}
+    /* los tres datos apilados, más compactos */
+    .tarjetas{grid-template-columns:1fr;margin-top:34px}
+    .dato{padding:26px 20px}
+    .dato svg{width:24px;height:24px;margin-bottom:12px}
+    /* el tracking ancho no entra en pantallas angostas */
+    .antetitulo{letter-spacing:.3em;padding-left:.3em}
+    .rotulo{letter-spacing:.26em;padding-left:.26em}
+    .bajar{letter-spacing:.26em}
+    .dato dt{letter-spacing:.24em;padding-left:.24em}
+    .enviar{letter-spacing:.22em;padding-left:.22em}
+  }
+</style>
+</head>
+<body>
+
+<div class="marco">
+
+  <!-- ---------- PORTADA ---------- -->
+  <header class="portada">
+    <!-- Emblemas: grabados de Pearson Scott Foresman (Wikimedia Commons,
+         dominio público), recoloreados al dorado de la página.
+         Balanza: "Balance - Scales of Justice (PSF)" · Pluma: "Quill 2 (PSF)" -->
+    <div class="emblemas" aria-hidden="true">
+      <img class="emblema-balanza" src="img/emblema-balanza.png" width="183" height="220" alt="">
+      <i class="separador"></i>
+      <img class="emblema-pluma" src="img/emblema-pluma.png" width="58" height="260" alt="">
+    </div>
+
+    <p class="antetitulo">Fiesta sorpresa de egreso</p>
+    <h1>Karen<br>De Freitas</h1>
+    <p class="lema">Se recibió. Y no tiene la más mínima idea de lo que le espera.</p>
+
+    <p class="credenciales">
+      <span>Abogada</span><i aria-hidden="true"></i><span>Escribana Pública</span>
+    </p>
+
+    <div class="regla" aria-hidden="true"><i></i></div>
+    <a class="cta" href="#confirmar">Confirmar asistencia</a>
+    <p class="bajar">O desplazá para ver todo</p>
+  </header>
+
+  <!-- ---------- LA HISTORIA ---------- -->
+  <section class="revela">
+    <p class="rotulo">Facultad de Derecho · UdelaR</p>
+    <h2>Querida Karen</h2>
+
+    <div class="carta">
+      <p class="apertura">
+        Te vimos estudiar. Te vimos entrar a mesas de examen con el estómago hecho un
+        nudo y salir sin poder creerlo. Te vimos hacerlo igual, todas las veces.
+      </p>
+      <p>
+        Ahora hay dos palabras al lado de tu nombre —<strong>abogada</strong> y
+        <strong>escribana pública</strong>— que se ganaron con años de códigos
+        subrayados, fotocopias hasta el tuétano y mates que se enfriaban mientras
+        seguías leyendo.
+      </p>
+      <p>
+        No podíamos dejar que eso pasara sin una fiesta. Así que armamos una, a tus
+        espaldas, con la gente que te quiere. Solo falta que vengas vos —y que ella
+        no se entere hasta que abra la puerta.
+      </p>
+    </div>
+
+    <div class="galeria">
+      <figure class="retrato principal revela">
+        <img src="img/karen-titulo.jpeg" alt="Karen sosteniendo su título de la Universidad de la República">
+        <figcaption>El día del título. Ahí empezó todo esto.</figcaption>
+      </figure>
+      <figure class="retrato secundaria-a revela">
+        <img src="img/karen-selfie.jpeg" alt="Karen junto a su pareja y su perro">
+        <figcaption>El comité de apoyo,<br>en pleno.</figcaption>
+      </figure>
+      <figure class="retrato secundaria-b revela">
+        <img src="img/karen-banco.jpeg" alt="Karen y su pareja sentados junto a su perro">
+        <figcaption>Los que la bancaron<br>en cada final.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ---------- DATOS ---------- -->
+  <section class="revela">
+    <p class="rotulo">Los detalles</p>
+    <h2>Dónde y cuándo</h2>
+
+    <dl class="tarjetas">
+      <div class="dato">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>
+        </svg>
+        <dt>Fecha</dt><dd>[FECHA DE LA FIESTA]</dd>
+      </div>
+      <div class="dato">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>
+        </svg>
+        <dt>Llegada</dt><dd>[HORA — antes que Karen]</dd>
+      </div>
+      <div class="dato">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+          <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/>
+        </svg>
+        <dt>Lugar</dt><dd>[DIRECCIÓN DEL SALÓN]</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- ---------- SECRETO ---------- -->
+  <aside class="secreto revela">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+      <rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+    </svg>
+    <h3>Es sorpresa</h3>
+    <p>
+      Karen no sabe nada y así tiene que seguir. Nada de indirectas, nada de stories,
+      nada de "¿estás libre ese sábado?". Si se entera, se arruina la mejor parte de la noche.
+    </p>
+  </aside>
+
+  <!-- ---------- FORMULARIO ---------- -->
+  <section class="rsvp revela" id="confirmar">
+    <p class="rotulo">Confirmación</p>
+    <h2>Decinos si venís</h2>
+
+    <form id="formulario"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSczvJOmh3H_VSDi9B3cuArSXBA6UBC-qw76D8G8Z5AqJWmz3g/formResponse"
+          method="POST"
+          target="sumidero">
+
+      <div class="campo">
+        <label for="nombre">Tu nombre y apellido</label>
+        <input type="text" id="nombre" name="entry.469026367" required placeholder="Para saber quién sos">
+      </div>
+
+      <div class="campo">
+        <fieldset>
+          <legend>¿Contamos con vos?</legend>
+          <div class="opciones">
+            <label class="opcion">
+              <input type="radio" name="entry.967123086" value="Si" required>
+              <span>Sí, ahí estoy</span>
+            </label>
+            <label class="opcion">
+              <input type="radio" name="entry.967123086" value="No">
+              <span>No voy a poder</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="campo">
+        <label for="mensaje">Un mensaje para Karen (opcional)</label>
+        <textarea id="mensaje" name="entry.132387428" placeholder="Se los vamos a leer todos esa noche…"></textarea>
+      </div>
+
+      <button class="enviar" type="submit">Confirmar</button>
+    </form>
+  </section>
+
+  <p class="pie">
+    Con todo el cariño de quienes te vimos estudiar,<br>
+    y con las ganas de verte la cara cuando entres.
+  </p>
+</div>
+
+<iframe name="sumidero" title="destino oculto" style="display:none" aria-hidden="true"></iframe>
+
+<!-- ---------- POPUP ---------- -->
+<div class="velo" id="velo" role="dialog" aria-modal="true" aria-labelledby="popup-titulo">
+  <div class="copa">
+    <div class="emblemas" aria-hidden="true">
+      <img class="emblema-balanza" src="img/emblema-balanza.png" width="183" height="220" alt="">
+      <i class="separador"></i>
+      <img class="emblema-pluma" src="img/emblema-pluma.png" width="58" height="260" alt="">
+    </div>
+    <h3 id="popup-titulo">¡Anotado!</h3>
+    <p id="popup-texto" aria-live="polite"></p>
+    <button class="cerrar" type="button" id="cerrar">Cerrar</button>
+  </div>
+</div>
+<div class="lluvia" id="lluvia" aria-hidden="true"></div>
+
+<script>
+(function(){
+  var form   = document.getElementById('formulario');
+  var velo   = document.getElementById('velo');
+  var titulo = document.getElementById('popup-titulo');
+  var texto  = document.getElementById('popup-texto');
+  var boton  = form.querySelector('.enviar');
+  var lluvia = document.getElementById('lluvia');
+
+  var COLORES = ['#d8b26a','#f0d29a','#8f7134','#f0ece3'];
+  var sinMovimiento = window.matchMedia &&
+                      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function chispas(n){
+    for(var i=0;i<n;i++){
+      var c = document.createElement('span');
+      c.className = 'chispa';
+      c.style.left = Math.random()*100 + 'vw';
+      c.style.background = COLORES[i % COLORES.length];
+      c.style.animationDuration = (2.6 + Math.random()*2.4) + 's';
+      c.style.animationDelay = (Math.random()*.6) + 's';
+      c.style.width = c.style.height = (5 + Math.random()*6) + 'px';
+      lluvia.appendChild(c);
+      setTimeout(function(el){ return function(){ el.remove(); }; }(c), 5600);
+    }
+  }
+
+  // El POST se envía al iframe oculto: la página no se recarga y la
+  // respuesta queda guardada en el Google Form. El iframe avisa con su
+  // evento 'load' que Google contestó; si no contesta, mostramos el error.
+  var marco     = document.querySelector('iframe[name="sumidero"]');
+  var esperando = false;
+  var reloj     = null;
+  var FORMULARIO_DIRECTO = 'https://forms.gle/RqAE2er3N5oMRCjC6';
+
+  marco.addEventListener('load', function(){
+    if(!esperando) return;      // ignora la carga inicial en blanco
+    esperando = false;
+    clearTimeout(reloj);
+    liberarBoton();
+  });
+
+  function liberarBoton(){
+    form.reset();
+    boton.disabled = false;
+    boton.textContent = 'Confirmar';
+  }
+
+  function falloDeEnvio(){
+    esperando = false;
+    clearTimeout(reloj);
+    titulo.textContent = 'No pudimos enviarlo';
+    texto.innerHTML = 'Parece que se cortó la conexión y tu respuesta no llegó. ' +
+                      'Cerrá este cartel y probá de nuevo, o confirmá directo en ' +
+                      '<a href="' + FORMULARIO_DIRECTO + '" target="_blank" rel="noopener">este formulario</a>.';
+    boton.disabled = false;
+    boton.textContent = 'Reintentar';
+  }
+
+  form.addEventListener('submit', function(e){
+    var va = form.querySelector('input[name="entry.967123086"]:checked');
+    var nombre = (form.querySelector('#nombre').value || '').trim().split(' ')[0];
+    var viene = va && va.value === 'Si';
+
+    abrirPopup();
+
+    if(navigator.onLine === false){   // sin datos: ni intentamos
+      e.preventDefault();
+      falloDeEnvio();
+      return;
+    }
+
+    if(viene){
+      titulo.textContent = '¡Nos vemos ahí!';
+      texto.innerHTML = 'Listo, <strong>' + (nombre || 'crack') + '</strong>: quedaste en la lista. ' +
+                        'Ya sos cómplice oficial de esta sorpresa, así que boca cerrada hasta el día de la fiesta.';
+      if(!sinMovimiento) chispas(90);
+    }else{
+      titulo.textContent = 'Qué lástima';
+      texto.innerHTML = 'Anotamos que no llegás, <strong>' + (nombre || 'che') + '</strong>. ' +
+                        'Te vas a perder la cara de Karen cuando entre y se le caiga la mandíbula. ' +
+                        'Gracias igual por avisar.';
+    }
+
+    boton.disabled = true;
+    boton.textContent = 'Enviando…';
+
+    esperando = true;
+    clearTimeout(reloj);
+    reloj = setTimeout(falloDeEnvio, 9000);   // Google no contestó a tiempo
+  });
+
+  // --- popup: apertura, cierre y foco ---
+  var botonCerrar = document.getElementById('cerrar');
+  var focoPrevio  = null;
+
+  function abrirPopup(){
+    focoPrevio = document.activeElement;
+    velo.classList.add('abierto');
+    botonCerrar.focus();
+  }
+  function cerrar(){
+    velo.classList.remove('abierto');
+    if(focoPrevio && focoPrevio.focus) focoPrevio.focus();
+  }
+
+  botonCerrar.addEventListener('click', cerrar);
+  velo.addEventListener('click', function(e){ if(e.target === velo) cerrar(); });
+  document.addEventListener('keydown', function(e){
+    if(!velo.classList.contains('abierto')) return;
+    if(e.key === 'Escape'){ cerrar(); return; }
+    // mientras el cartel está abierto, el foco no se escapa detrás
+    if(e.key === 'Tab'){
+      var dentro = velo.querySelectorAll('a[href], button');
+      if(!dentro.length) return;
+      var primero = dentro[0], ultimo = dentro[dentro.length - 1];
+      if(e.shiftKey && document.activeElement === primero){ e.preventDefault(); ultimo.focus(); }
+      else if(!e.shiftKey && document.activeElement === ultimo){ e.preventDefault(); primero.focus(); }
+    }
+  });
+
+  // aparición progresiva al hacer scroll
+  var obs = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, {threshold:.14});
+  document.querySelectorAll('.revela').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+</body>
+</html>

@@ -140,6 +140,17 @@
     max-width:22ch;
     line-height:1.4;
   }
+  .grito{
+    font-family:"Cinzel",serif;
+    font-weight:700;
+    font-size:clamp(26px,6.2vw,42px);
+    line-height:1.12;
+    letter-spacing:.03em;
+    color:var(--oro-vivo);
+    margin:24px auto 0;
+    text-wrap:balance;
+  }
+
   .credenciales{
     display:flex;
     align-items:center;
@@ -154,17 +165,6 @@
     color:var(--oro);
   }
   .credenciales i{width:5px;height:5px;background:var(--oro);transform:rotate(45deg);display:block}
-
-  .regla{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    margin:44px auto 0;
-    width:min(320px,72%);
-  }
-  .regla::before,.regla::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--oro),transparent)}
-  .regla i{width:8px;height:8px;border:1px solid var(--oro);transform:rotate(45deg);display:block}
 
   /* llamada a la acción de la portada */
   .cta{
@@ -523,12 +523,12 @@
     <p class="antetitulo">Fiesta sorpresa de egreso</p>
     <h1>Karen<br>De Freitas</h1>
     <p class="lema">Se recibió. Y no tiene la más mínima idea de lo que le espera.</p>
+    <p class="grito">¿¿¿QUE SOOOOOOY???</p>
 
     <p class="credenciales">
       <span>Abogada</span><i aria-hidden="true"></i><span>Escribana Pública</span>
     </p>
 
-    <div class="regla" aria-hidden="true"><i></i></div>
     <a class="cta" href="#confirmar">Confirmar asistencia</a>
     <p class="bajar">O desplazá para ver todo</p>
   </header>

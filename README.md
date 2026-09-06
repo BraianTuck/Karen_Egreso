@@ -6,15 +6,15 @@ pública** (Facultad de Derecho, UdelaR).
 Es un solo archivo: [`index.html`](index.html), con HTML, CSS y JS adentro. No
 hay que instalar ni compilar nada — se abre con doble clic.
 
-## Antes de compartirla: completar los datos
+## La fiesta
 
-Dentro de `index.html` quedan tres datos entre corchetes. Buscá `[` y reemplazá:
-
-| Marcador | Qué va |
+| | |
 |---|---|
-| `[FECHA DE LA FIESTA]` | Día de la fiesta |
-| `[HORA — antes que Karen]` | Hora de llegada de los invitados |
-| `[DIRECCIÓN DEL SALÓN]` | Dónde es |
+| **Fecha** | 19 de setiembre |
+| **Llegada** | 21:00 hs — antes que Karen |
+| **Lugar** | [La Tapera](https://maps.app.goo.gl/utPm3DPfJVZMp9az9) |
+
+Están en la sección «Dónde y cuándo» de `index.html`, dentro de `<dl class="tarjetas">`.
 
 ## Cómo se guardan las confirmaciones
 

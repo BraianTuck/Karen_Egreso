@@ -284,18 +284,20 @@
   /* una arriba a todo el ancho, dos abajo */
   .principal{grid-column:1 / -1}
   .principal img{aspect-ratio:4/3;object-position:center 25%}
-  .secundaria-a{grid-column:1 / span 7}
-  .secundaria-a img{aspect-ratio:4/3}
-  .secundaria-b{grid-column:8 / span 5}
-  .secundaria-b img{aspect-ratio:3/4}
+  /* las dos de abajo, mismo ancho y mismo alto */
+  .secundaria-a{grid-column:1 / span 6}
+  .secundaria-b{grid-column:7 / span 6}
+  .secundaria-a img,.secundaria-b img{aspect-ratio:4/3}
+  /* la del banco es vertical: encuadre alto para no cortar las caras */
+  .secundaria-b img{object-position:center 30%}
   .retrato figcaption{
     font-family:"Cormorant Garamond",serif;
     font-style:italic;
-    font-size:15px;
+    font-size:clamp(17px,3.6vw,21px);
     color:var(--hueso-tenue);
     text-align:center;
-    padding:14px 6px 4px;
-    line-height:1.5;
+    padding:16px 8px 4px;
+    line-height:1.45;
   }
 
   /* ---------- datos ---------- */
@@ -328,6 +330,25 @@
     font-weight:600;
     line-height:1.25;
     color:var(--oro-vivo);
+  }
+  .dato dd a{
+    color:var(--oro-vivo);
+    text-decoration:none;
+    border-bottom:1px solid rgba(216,178,106,.5);
+    padding-bottom:3px;
+    transition:border-color .2s ease;
+  }
+  .dato dd a:hover{color:var(--oro-vivo);border-bottom-color:var(--oro-vivo)}
+  .dato .nota{
+    display:block;
+    margin-top:10px;
+    font-family:"Jost",sans-serif;
+    font-weight:400;
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--hueso-tenue);
+    padding-left:.2em;
   }
 
   /* ---------- secreto ---------- */
@@ -545,9 +566,7 @@
       </p>
       <p>
         Ahora hay dos palabras al lado de tu nombre —<strong>abogada</strong> y
-        <strong>escribana pública</strong>— que se ganaron con años de códigos
-        subrayados, fotocopias hasta el tuétano y mates que se enfriaban mientras
-        seguías leyendo.
+        <strong>escribana pública.</strong>
       </p>
       <p>
         No podíamos dejar que eso pasara sin una fiesta. Así que armamos una, a tus
@@ -582,19 +601,23 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
           <rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>
         </svg>
-        <dt>Fecha</dt><dd>[FECHA DE LA FIESTA]</dd>
+        <dt>Fecha</dt><dd>19 de setiembre</dd>
       </div>
       <div class="dato">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
           <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>
         </svg>
-        <dt>Llegada</dt><dd>[HORA — antes que Karen]</dd>
+        <dt>Llegada</dt><dd>21:00 hs<span class="nota">Antes que Karen</span></dd>
       </div>
       <div class="dato">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
           <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/>
         </svg>
-        <dt>Lugar</dt><dd>[DIRECCIÓN DEL SALÓN]</dd>
+        <dt>Lugar</dt>
+        <dd>
+          <a href="https://maps.app.goo.gl/utPm3DPfJVZMp9az9" target="_blank" rel="noopener">La Tapera</a>
+          <span class="nota">Tocá para ver el mapa</span>
+        </dd>
       </div>
     </dl>
   </section>
